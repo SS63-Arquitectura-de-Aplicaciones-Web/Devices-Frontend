@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-flat-button [routerLink]="'/segura/home'">
+    Inicio<mat-icon>home</mat-icon>
+  </button>
+  <button mat-flat-button [routerLink]="'/segura/reporte01'">
+    Reporte 01<mat-icon>list</mat-icon>
+  </button>
+  <button mat-flat-button [routerLink]="'/segura/reporte02'">
+    Reporte 02<mat-icon>list</mat-icon>
+  </button>
+  <button mat-flat-button (click)="OnLogout()">
+    {{(authUser$ | async)?.username}} <mat-icon>power_settings_new</mat-icon>
+  </button>
+</mat-toolbar>

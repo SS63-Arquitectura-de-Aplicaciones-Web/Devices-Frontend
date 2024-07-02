@@ -1,0 +1,36 @@
+<h2>Iniciar sesión</h2>
+<div class="form-container">
+  <form [formGroup]="authForm">
+    <mat-form-field class="field" appearance="outline">
+      <mat-label>Nombre de usuario</mat-label>
+      <input
+        formControlName="username"
+        matInput
+        placeholder="Ingresa tu nombre de usuario"
+        value=""
+      />
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="field" appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input
+        formControlName="password"
+        matInput
+        [type]="revealPassword ? 'text' : 'password'"
+      />
+      <button
+        (click)="revealPassword = !revealPassword"
+        matSuffix
+        mat-icon-button
+        type="button"
+      >
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <mat-error>Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button class="btn-submit" (click)="OnSubmit()" mat-flat-button type="submit" color="primary">
+      Iniciar sesión
+    </button>
+  </form>
+</div>
